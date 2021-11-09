@@ -11,8 +11,8 @@ const fetchIssues = () => {
         var assignedTo = issues[i].assignedTo;
         var status = issues[i].status;
 
-        issuesList.innerHTML += "<div class = issue>" + "Id: " + id + " Description: " + desc + " Severity: " + severity + " Assigned to: " + assignedTo + " Status: " + status + 
-        "<button class=close onclick=closeIssue(" + id + ")>Close</button><button class=remove onclick=removeIssue(" + id + ")>Remove</button></div>";
+        issuesList.innerHTML += "<div class = issue>" + "<span>Id: " + id + "</span><span>Description: " + desc + "</span><span>Severity: " + severity + "</span><span>Assigned to: " + assignedTo + "</span><span>" + status + 
+        "</span><button class=close onclick=closeIssue(" + id + ")>Close</button><button class=remove onclick=removeIssue(" + id + ")>Remove</button></div>";
 
     }
 
