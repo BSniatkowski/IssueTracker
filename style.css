@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    width: max-content;
+    margin: 0 auto;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin: 0 auto;
+}
+
+form input {
+    height: 2rem;
+    width: 100%;
+}
+
+form select {
+    height: 2rem;
+    width: 100%;
+}
+
+form button {
+    width: 100%;
+    height: 2rem;
+}
+
+.issuesList {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.issuesList div {
+    margin: 2rem 0;
+    font-size: large;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.issuesList div button {
+    padding: .5rem;
+    width: 5rem;
+}

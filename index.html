@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+   
+    <title>Document</title>
+</head>
+<body onload="fetchIssues()">
+    <h1>Issue Tracker</h1>
+    <form>
+        <input type="text" class="desc" placeholder="Description">
+        <select class="severity">
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+        </select>
+        <input type="text" class="assign" placeholder="Assigned to">
+        <button type="submit" class="add">Add new issue</button>
+    </form>
+    <div class="issuesList"></div>
+    <script src="index.js"></script>
+</body>
+</html>
