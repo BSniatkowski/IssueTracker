@@ -12,7 +12,7 @@ const fetchIssues = () => {
         var status = issues[i].status;
 
         issuesList.innerHTML += "<div class = issue>" + "Id: " + id + " Description: " + desc + " Severity: " + severity + " Assigned to: " + assignedTo + " Status: " + status + 
-        "<button class=close>Close</button><button class=remove>Remove</button></div>";
+        "<button class=close onclick=closeIssue(" + id + ")>Close</button><button class=remove onclick=removeIssue(" + id + ")>Remove</button></div>";
 
     }
 
@@ -27,7 +27,7 @@ const uploadIssue = () => {
 
     var issue = {
 
-        id: "brak",
+        id: Math.floor(Math.random() * 1000000),
         description: desc.value,
         severity: severity.value,
         assignedTo: assign.value,
@@ -53,3 +53,33 @@ submit.addEventListener('click', (e) => {
     submit.parentNode.reset();
     fetchIssues();
 });
+
+const removeIssue = (id) => {
+
+    var issues = JSON.parse(localStorage.getItem('issues'));
+
+    for(var i = 0; i < issues.length; i++) {
+        if(issues[i].id == id) {
+            issues.splice(i, 1);
+            localStorage.setItem('issues', JSON.stringify(issues));
+        }
+    }
+
+    fetchIssues();
+
+}
+
+const closeIssue = (id) => {
+
+    var issues = JSON.parse(localStorage.getItem('issues'));
+
+    for(var i = 0; i < issues.length; i++) {
+        if(issues[i].id == id) {
+            issues[i].status = "Closed";
+            localStorage.setItem('issues', JSON.stringify(issues));
+        }
+    }
+
+    fetchIssues();
+
+}
